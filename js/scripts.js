@@ -96,18 +96,18 @@ getMathOperationInArray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
 
 const getCapitalVowels = (word) => {
   const vocales = "aeiouáéíóú";
-  const result = word
-    .split("")
-    .reduce((acc, letter) =>
-      vocales.includes(letter.toLowerCase())
-        ? acc + letter.toUpperCase()
-        : acc + letter
-    );
+  const result = word.split("").reduce((acc, letter) => {
+    if (vocales.includes(letter.toLowerCase())) {
+      return acc + letter.toUpperCase();
+    } else {
+      return acc + letter;
+    }
+  }, "");
   console.log(result);
 };
 
 console.log("EJERCICIO 7:");
-getCapitalVowels("parangaricutirimicuaro");
+getCapitalVowels("arangaricutirimicuaro");
 
 // - Crea una función que reciba un array de 10 números y te diga si alguno es mayor de 5.
 
